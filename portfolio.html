@@ -4,53 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="./assets/portfolio/styles.css">
     <title>Portfolio</title>
 </head>
 <body>
     <header class="header">
         <nav class="nav">
-            <span class="nav-logo"><a href="index.html">Portfolio</a></span>
+            <span class="nav-logo"><a href="index.html">NHLANHLA</a></span>
             <ul class="nav-links">
                 <li class="nav-link">
-                    <a href="#">Home</a>
+                    <a href="index.html">Home</a>
                 </li>
                 <li class="nav-link">
-                    <a href="#">About</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">Services</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">Portfolio</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#">Resource</a>
-                </li>
-                <li class="nav-link">
-                    <a href="#" class="button secondary-button">Lets Talk</a>
+                    <a href="contact.html" class="button secondary-button">Lets Talk</a>
                 </li>
             </ul>
         </nav>
     </header>
-    <main class="main">
-        <section class="projects-portfolio">
-            <div class="heading">
-                <h2>Explore <span class="heading-text">my portfolio</span> of projects</h2>
-                <p>Embark on a Design Journey: Discovering tailored solutions infused with passion, precision, and <br> purpose to shape tomorrows experiences</p>
-            </div>
-        </section>
-        <section class="blog">
-            <div class="heading-two">
-                <h2>Latest <br><span class="heading-span">blog posts</span></h2>
-                <div class="heading-action">
-                    <p id="blog-content">Lorem, ipsum dolor sit amet consectetur adipisicing <br>
-                        Suscipit perferendis ut cum commodi
-                    </p>
-                    <a href="#" class="button primary-button">Lets Talk</a>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Nhlanhla <span class="primary">|</span> Full-Stack Developer with Data Analytics expertise</h1>
+                <p class="bio">
+                    Passionate Full-Stack Developer with expertise in data analytics and building modern web applications. 
+                    Specializing in React, Node.js, and cloud technologies to create innovative solutions. 
+                    Committed to writing clean, efficient code and delivering exceptional user experiences.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="button secondary-button">Download my cv</a>
                 </div>
             </div>
-        </section>
+            <div class="hero-image">
+                <img src="./assets/images/da broke 2.jpg" alt="Nhlanhla Msibi" class="profile-photo">
+            </div>
+        </div>
+    </section>
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About Me <span class="heading-text">& My Journey</span></h2>
+                <div class="detailed-bio">
+                    <p>I am a Full-Stack Developer with a strong foundation in both front-end and back-end development. I have also completed qualifications for Data Analytics, Systems Development as well as Android Mobile Development My journey in tech began with a curiosity about how websites work, which led me to dive deep into web development. I specialize in creating responsive, user-friendly applications using modern technologies.</p>
+                    <p>With expertise in React.js, Node.js, and database management, I've developed various projects ranging from e-commerce platforms to AI-integrated applications. I'm particularly passionate about creating solutions that make a real difference in users' lives.</p>
+                </div>
+
+                <div class="certifications">
+                    <h3>Certifications & Achievements</h3>
+                    <ul class="cert-list">
+                        <li>
+                            <i class='bx bx-badge-check'></i>
+                            <div class="cert-details">
+                                <h4>Full-Stack Web Development with AI</h4>
+                                <p>Re:Coded - 2024</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class='bx bx-badge-check'></i>
+                            <div class="cert-details">
+                                <h4>Data Analytics</h4>
+                                <p>ALX Africa - 2023</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class='bx bx-badge-check'></i>
+                            <div class="cert-details">
+                                <h4>Systems development</h4>
+                                <p>Mentec Foundation - 2015</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class='bx bx-badge-check'></i>
+                            <div class="cert-details">
+                                <h4>Android Mobile development</h4>
+                                <p>Mentec Foundation - 2015</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="fun-fact">
+                    <h3>Fun Fact</h3>
+                    <p><i class='bx bx-joystick'></i> When I'm not coding, I'm probably playing Smite (Battle of the Gods). I believe the strategic thinking and team coordination skills from MOBA games directly translate to better project management and collaborative coding!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="main">
+        <div class="heading">
+            <h2>Explore <span class="heading-text">my portfolio</span> of projects</h2>
+            <p>Embark on a Design Journey: Discovering tailored solutions infused with passion, precision, and <br> purpose to shape tomorrows experiences</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="item-content">
+                    <div class="item-name">
+                        <h4><span class="project-name-colored">E-Commerce Platform, </span>Horizon</h4>
+                        <small>Status - <span class="yellow">In progress</span></small>
+                    </div>
+                    <p>Fullstack Web Application <br> ExpressJS, NodeJS and ReactJS</p>
+                    <div class="context">
+                        <p class="context-item">Frontend</p>
+                        <p class="context-item">Backend</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Nhlanhla-advocate/Horizon-e-commerce" class="github-button" target="_blank" rel="noopener noreferrer">
+                            <i class='bx bxl-github'></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <img class="project-image" src="./assets/images/e-commerce.jpg" alt="E-Commerce Platform">
+            </div>
+            <div class="portfolio-item">
+                <div class="item-content">
+                    <div class="item-name">
+                        <h4><span class="project-name-colored">Full-Stack with AI, </span>DataForge AI</h4>
+                        <small>Status - <span class="green">Completed</span></small>
+                    </div>
+                    <p>ExpresJS and NodeJS<br> ReactJS and Gemini</p>
+                    <div class="context">
+                        <p class="context-item">Front-end</p>
+                        <p class="context-item">Back-end</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Nhlanhla-advocate/DataForgeAI-Capstone-FullStack-main" class="github-button" target="_blank" rel="noopener noreferrer">
+                            <i class='bx bxl-github'></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <img class="project-image" src="./assets/images/recipe.jpg" alt="Data Analytics Dashboard">
+            </div>
+            <div class="portfolio-item">
+                <div class="item-content">
+                    <div class="item-name">
+                        <h4><span class="project-name-colored">Movie website, </span>Cine-stream</h4>
+                        <small>Status - <span class="green">Completed</span></small>
+                    </div>
+                    <p>ReactJS <br> Restful API</p>
+                    <div class="context">
+                        <p class="context-item">Front-end</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Nhlanhla-advocate" class="github-button" target="_blank" rel="noopener noreferrer">
+                            <i class='bx bxl-github'></i> View on GitHub
+                        </a>
+                        <a href="https://cine-stream-website.vercel.app/" class="website-button" target="_blank" rel="noopener noreferrer">
+                            <i class='bx bx-globe'></i> Live Website
+                        </a>
+                    </div>
+                </div>
+                <img class="project-image" src="./assets/images/movie.jpg" alt="Machine Learning Model">
+            </div>
+            <div class="portfolio-item">
+                <div class="item-content">
+                    <div class="item-name">
+                        <h4><span class="project-name-colored">Mad libs game </span>Mad libs</h4>
+                        <small>Status - <span class="green">Completed</span></small>
+                    </div>
+                    <p>Fill in the word game <br> JavaScript</p>
+                    <div class="context">
+                        <p class="context-item">Frontend</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Nhlanhla-advocate/madlibs-project-Nhlanhla-advocate" class="github-button" target="_blank" rel="noopener noreferrer">
+                            <i class='bx bxl-github'></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+                <img class="project-image" src="./assets/images/mad libs.jpg" alt="Portfolio Website">
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <div class="footer-content">
@@ -59,16 +181,10 @@
                     <h5>Navigation</h5>
                 </li>
                 <li class="footer-link">
-                    <a href="#">About Me</a>
+                    <a href="contact.html">Contact Me</a>
                 </li>
                 <li class="footer-link">
-                    <a href="#">Contact Me</a>
-                </li>
-                <li class="footer-link">
-                    <a href="#">Portfolio</a>
-                </li>
-                <li class="footer-link">
-                    <a href="#">Services</a>
+                    <a href="index.html">Home</a>
                 </li>
             </ul>
             <ul class="footer-links">
@@ -76,16 +192,16 @@
                     <h5>Useful Links</h5>
                 </li>
                 <li class="footer-link">
-                    <a href="#">Blog</a>
+                    <a href="https://www.technewsworld.com/section/tech-blog">Blog</a>
                 </li>
                 <li class="footer-link">
-                    <a href="#">FAQs</a>
+                    <a href="https://www.zendesk.com/blog/the-best-faq-page-examples-and-how-to-make-your-own/">FAQs</a>
                 </li>
                 <li class="footer-link">
-                    <a href="#">Partnerships</a>
+                    <a href="https://www.projecty.world/">Partnerships</a>
                 </li>
                 <li class="footer-link">
-                    <a href="#">Help Center</a>
+                    <a href="https://www.helpscout.com/">Help Center</a>
                 </li>
             </ul>
             <ul class="footer-links">
@@ -93,29 +209,29 @@
                     <h5>Resources</h5>
                 </li>
                 <li class="footer-link">
-                    <a href="#">Github</a>
+                    <a href="https://github.com/Nhlanhla-advocate">Github</a>
                 </li>
                 <li class="footer-link">
-                    <a href="#">W3 Schools</a>
+                    <a href="https://www.w3schools.com/">W3 Schools</a>
                 </li>
                 <li class="footer-link">
-                    <a href="#">Stack Overflow</a>
+                    <a href="https://www.projecty.world/">Stack Overflow</a>
                 </li>
                 <li class="footer-link">
-                    <a href="#">MDN Documentation</a>
+                    <a href="https://developer.mozilla.org/en-US/">MDN Documentation</a>
                 </li>
             </ul>
             <ul class="footer-links">
                 <li class="footer-header">
-                    <h5>Subscribe</h5>
+                    <h5>Email me</h5>
                 </li>
                 <li class="footer-subscription">
-                    <p class="grey">Join my community to  recieve updates <br> and special discounts on projects</p>
+                    <p class="grey">Join me for a collaboration <br> and create amazing projects</p>
                     <form action="">
                         <input type="email" name="email" id="email" placeholder="Email">
-                        <input type="submit" class="button primary-button" value="Subscribe">
+                        <input type="submit" class="button primary-button" value="Lock in">
                     </form>
-                    <small class="grey">By subscribing you agree to our Privacy Policy</small>
+                    <small class="grey">By emailing you agree to our Privacy Policy</small>
                 </li>
             </ul>
         </div>
@@ -123,32 +239,15 @@
             <h2>Portfolio.</h2>
             <ul class="social-links">
                 <li class="social-link">
-                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="https://github.com/Nhlanhla-advocate"><i class='bx bxl-github'></i></a>
                 </li>
                 <li class="social-link">
-                    <a href="#"><i class='bx bxl-linkedin'></i></a>
-                </li>
-                <li class="social-link">
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                </li>
-                <li class="social-link">
-                    <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="https://www.linkedin.com/in/nhlanhla-advocate-msibi-258117288/"><i class='bx bxl-linkedin'></i></a>
                 </li>
             </ul>
         </div>
         <div class="footer-bottom-links">
-            <ul class="bottom-links">
-                <li class="bottom-link">
-                    <a href="#">Privacy Policy</a>
-                </li>
-                <li class="bottom-link">
-                    <a href="#">Terms of Service</a>
-                </li>
-                <li class="bottom-link">
-                    <a href="#">Cookie Policy</a>
-                </li>
-            </ul>
-            <p class="bottom-p">&copy; 2024 Portfolio. All rights reserved</p>
+            <p class="bottom-p">&copy; 2025 Portfolio. All rights reserved</p>
         </div>
     </footer>
 </body>

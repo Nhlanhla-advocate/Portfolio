@@ -227,28 +227,29 @@ main.main .heading .heading-text {
     SKILLS
 */
 section.skills .skills-set {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 40px;
 }
- section.skills .skills-set .skill {
+section.skills .skills-set .skill {
     border: 1px solid var(--gray-color);
     border-radius: 20px;
     padding: 30px;
 }
- section.skills .skills-set .skill:hover {
+section.skills .skills-set .skill:hover {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     transition: 300ms ease-in;
 }
- section.skills .skills-set .skill i {
+section.skills .skills-set .skill i {
     font-size: 30px;
     padding: 10px;
     color: var(--primary-color);
     background-color: var(--faded-blue);
     border-radius: 50%;
 }
- section.skills .skills-set .skill p {
+section.skills .skills-set .skill p {
     color: var(--grey-color);
 }
 /*
@@ -283,37 +284,54 @@ section.portfolio .portfolio-item {
     border-bottom: 1px solid var(--gray-color);
     padding-bottom: 30px;
 }
+
 section.portfolio .portfolio-item .item-content {
     display: flex;
     justify-content: space-between;
 }
+
 section.portfolio .portfolio-item .project-image {
     object-fit: cover;
     width: 100%;
-    height: 400px;
+    max-height: 900px;
     margin-top: 30px;
     border-radius: 20px;
+
+    }
+    
+    /* Adjust height for smaller screens */
+    @media (max-width: 768px) {
+        section.portfolio .portfolio-item .project-image {
+            max-height: 700px;
+        }
 }
+
 section.portfolio .portfolio-item .item-content .item-name h4, p {
     margin: 0;
 }
+
 section.portfolio .portfolio-item .item-content .item-name .project-name-colored {
     color: var(--primary-color);
 }
+
 section.portfolio .portfolio-item .item-content .item-name small {
     color: var(--grey-color);
     font-size: 12px;
 }
+
 section.portfolio .portfolio-item .item-content .item-name small span {
     font-weight: 600;
 }
+
 section.portfolio .portfolio-item .item-content .context {
     display: flex;
 }
+
 section.portfolio .portfolio-item .item-content p {
     font-size: 14px;
     color: var(--grey-color);
 }
+
 section.portfolio .portfolio-item .item-content .context .context-item {
     font-size: 12px;
     font-weight: 500;
