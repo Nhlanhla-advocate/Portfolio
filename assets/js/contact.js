@@ -1,60 +1,75 @@
-// Initialize EmailJS with your public key
-(function() {
-    emailjs.init("-jGwOzq7dF33TJE5b");
-})();
-
-function sendEmail(e) {
-    e.preventDefault();
-
-    // Get form elements
-    const firstname = document.getElementById('firstname').value;
-    const lastname = document.getElementById('lastname').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phonenumber').value;
-    const message = document.getElementById('message').value;
-
-    // Show loading state
-    const submitButton = e.target.querySelector('button[type="submit"]');
-    const originalText = submitButton.innerHTML;
-    submitButton.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Sending...';
-    submitButton.disabled = true;
-
-    // Prepare template parameters
-    const templateParams = {
-        from_name: `${firstname} ${lastname}`,
-        reply_to: email,
-        from_email: email,
-        phone_number: phone,
-        message: message,
-        to_name: 'Nhlanhla Msibi'
-    };
-
-    // Send email using EmailJS
-    emailjs.send(
-        "service_risirnr", 
-        "template_zca9rkv", 
-        templateParams
-    )
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
+// Formspree form handling
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Show success message
-            alert('Thank you! Your message has been sent successfully.');
+            // Get form elements
+            const firstname = document.getElementById('firstname').value.trim();
+            const lastname = document.getElementById('lastname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phonenumber').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Basic validation
+            if (!firstname || !lastname || !email || !phone || !message) {
+                alert('Please fill in all required fields.');
+                return false;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            // Show loading state
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Sending...';
+            submitButton.disabled = true;
+
+            // Prepare form data
+            const formData = new FormData(form);
             
-            // Reset form
-            document.getElementById('contactForm').reset();
-        }, function(error) {
-            console.log('FAILED...', error);
-            alert('Oops! Something went wrong. Please try again later.');
-        })
-        .finally(() => {
-            // Restore button state
-            submitButton.innerHTML = originalText;
-            submitButton.disabled = false;
+            // Add additional data
+            formData.append('_subject', `New Contact Form Message from ${firstname} ${lastname}`);
+            formData.append('_replyto', email);
+            formData.append('_cc', 'nhlanhlamsibi008@gmail.com');
+
+            // Send form using fetch
+            fetch('https://formspree.io/f/nhlanhlamsibi008@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success
+                    alert('Thank you! Your message has been sent successfully.');
+                    form.reset();
+                } else {
+                    // Error
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Oops! Something went wrong. Please try again later or contact me directly at nhlanhlamsibi008@gmail.com');
+            })
+            .finally(() => {
+                // Restore button state
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            });
         });
-
-    return false;
-}
+    }
+});
 
 // Add loading animation CSS
 const style = document.createElement('style');
