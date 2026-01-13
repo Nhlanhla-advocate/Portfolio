@@ -21,6 +21,17 @@ html, body {
     font-family: Inter Tight, sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 main.main {
     padding: 20px 80px;
@@ -185,6 +196,21 @@ header.header nav.nav ul.nav-links li.nav-link a:hover {
     color: var(--primary-color);
     transition: 300ms ease-in-out;
 }
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--black-color);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-toggle:hover {
+    color: var(--primary-color);
+}
 header.header .hero {
     text-align: center;
     margin-top: 30px;
@@ -248,6 +274,13 @@ section.skills .skills-set .skill i {
     color: var(--primary-color);
     background-color: var(--faded-blue);
     border-radius: 50%;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
 }
 section.skills .skills-set .skill p {
     color: var(--grey-color);
@@ -583,4 +616,193 @@ footer.footer .footer-bottom-links .bottom-links {
 footer.footer .footer-bottom-links .bottom-links a,  .bottom-p {
     font-size: 12px;
     color: var(--grey-color);
+}
+
+/*
+    RESPONSIVE DESIGN
+*/
+@media (max-width: 1024px) {
+    header.header {
+        padding: 20px 40px;
+    }
+    
+    main.main {
+        padding: 20px 40px;
+    }
+    
+    footer.footer {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    header.header {
+        padding: 15px 20px;
+    }
+    
+    header.header nav.nav {
+        flex-wrap: wrap;
+        position: relative;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    header.header nav.nav ul.nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid var(--gray-color);
+        gap: 15px;
+    }
+    
+    header.header nav.nav ul.nav-links.active {
+        display: flex;
+    }
+    
+    header.header nav.nav ul.nav-links li.nav-link {
+        width: 100%;
+    }
+    
+    header.header nav.nav ul.nav-links li.nav-link a {
+        margin-left: 0;
+        font-size: 16px;
+        display: block;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    main.main {
+        padding: 15px 20px;
+    }
+    
+    main.main .heading h2 {
+        font-size: 28px;
+    }
+    
+    main.main .heading p {
+        font-size: 14px;
+    }
+    
+    section.contact .contact-form {
+        padding-top: 30px;
+    }
+    
+    section.contact .contact-form .form {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    section.contact .contact-form .full-name {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    section.contact .contact-details {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+    
+    section.contact .contact-details .contact-details-heading {
+        text-align: center;
+    }
+    
+    section.contact .contact-details .contact-details-information {
+        width: 100%;
+    }
+    
+    footer.footer {
+        padding: 15px 20px;
+    }
+    
+    footer.footer .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    footer.footer .footer-social-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header.header {
+        padding: 10px 15px;
+    }
+    
+    header.header nav.nav ul.nav-links li.nav-link a {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    
+    main.main {
+        padding: 10px 15px;
+    }
+    
+    main.main .heading h2 {
+        font-size: 24px;
+    }
+    
+    main.main .heading p {
+        font-size: 13px;
+    }
+    
+    section.contact .contact-form {
+        padding-top: 20px;
+    }
+    
+    section.contact .contact-form .form-group .form-control,
+    section.contact .contact-form textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    section.contact .contact-details {
+        padding: 20px 15px;
+    }
+    
+    section.contact .contact-details .contact-details-heading h4 {
+        font-size: 18px;
+    }
+    
+    section.contact .contact-details .contact-details-information .address,
+    section.contact .contact-details .contact-details-information .email,
+    section.contact .contact-details .contact-details-information .phone {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    section.contact .contact-details .contact-details-information .content-details h5 {
+        font-size: 14px;
+    }
+    
+    section.contact .contact-details .contact-details-information .content-details p {
+        font-size: 12px;
+    }
+    
+    .button.primary-button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    footer.footer {
+        padding: 10px 15px;
+    }
+    
+    footer.footer .footer-links .footer-subscription form {
+        flex-direction: column;
+    }
+    
+    footer.footer .footer-links .footer-subscription #email {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
